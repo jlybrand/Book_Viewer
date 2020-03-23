@@ -6,12 +6,6 @@ before do
   @contents = File.readlines("data/toc.txt")
 end
 
-# helpers do
-#   def in_paragraphs(text)
-#     text.split("\n\n").map { |paragraph| "<p>#{paragraph}</p>" }.join
-#   end
-# end
-
 helpers do
   def in_paragraphs(text)
     text.split("\n\n").each_with_index.map do |line, index|
@@ -71,6 +65,7 @@ end
 # specified query. Each Hash contain values for its :name, :number, and
 # :paragraphs keys. The value for :paragraphs will be a hash of paragraph indexes
 # and that paragraph's text.
+
 def chapters_matching(query)
   results = []
 
